@@ -2,9 +2,9 @@ import "./Updateprofile.css";
 import React, { useEffect, useState } from "react";
 
 import { Avatar, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
-import { loadUser, registerUser, updateprofile } from "../../Actions/User";
+import { loadUser,updateprofile } from "../../Actions/User";
 import { useAlert } from "react-alert";
 import Loader from "../Loader/Loader";
 function Updateprofile() {

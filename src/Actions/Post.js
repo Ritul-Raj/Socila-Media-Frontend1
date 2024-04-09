@@ -4,7 +4,7 @@ export const likePost = (id) => async (dispatch) => {
     dispatch({
       type: "likeRequest",
     });
-    const { data } = await axios.get(`https://mern-socila-media1.onrender.com/api/v1/post/${id}`);
+    const { data } = await axios.get(`/api/v1/post/${id}`);
     dispatch({
       type: "likeSuccess",
       payload: data.message,
@@ -23,7 +23,7 @@ export const addcommentOnPost = (id, comment) => async (dispatch) => {
       type: "addcommentRequest",
     });
     const { data } = await axios.put(
-      `https://mern-socila-media1.onrender.com/api/v1/post/comment/${id}`,
+      `/api/v1/post/comment/${id}`,
       {
         comment,
       },
@@ -51,7 +51,7 @@ export const deletecommentOnPost = (id, commentid) => async (dispatch) => {
     dispatch({
       type: "deletecommentRequest",
     });
-    const { data } = await axios.delete(`https://mern-socila-media1.onrender.com/api/v1/post/comment/${id}`, {
+    const { data } = await axios.delete(`/api/v1/post/comment/${id}`, {
       data:{commentid},
     });
 
@@ -72,7 +72,7 @@ export const CreateNewPost = (caption, image) => async (dispatch) => {
     dispatch({
       type: "newPostRequest",
     });
-    const { data } = await axios.post(`https://mern-socila-media1.onrender.com/api/v1/post/upload`, {
+    const { data } = await axios.post(`/api/v1/post/upload`, {
       caption,
       image,
     },{
@@ -97,7 +97,7 @@ export const updateCaptionn = (caption,id) => async (dispatch) => {
     dispatch({
       type: "updateCaptionRequest",
     });
-    const { data } = await axios.put(`https://mern-socila-media1.onrender.com/api/v1/post/${id}`, {
+    const { data } = await axios.put(`/api/v1/post/${id}`, {
       caption,
       
     },{
@@ -123,7 +123,7 @@ export const deletepost= (id) => async (dispatch) => {
     dispatch({
       type: "deletepostRequest",
     });
-    const { data } = await axios.delete(`https://mern-socila-media1.onrender.com/api/v1/post/${id}`);
+    const { data } = await axios.delete(`/api/v1/post/${id}`);
 
     dispatch({
       type: "deletepostSuccess",
